@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MyCustomPicker.ViewModels"
+             xmlns:controls="clr-namespace:MyCustomPicker.Controls"
+             mc:Ignorable="d"
+             x:Class="MyCustomPicker.Views.MonkeyView">
+
+    <ContentPage.BindingContext>
+        <vm:MonkeyViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:CustomPicker Title="Select a monkey"
+                                   TitleColor="Green"
+                                   ItemsSource="{Binding Monkeys}"
+                                   ItemDisplayBinding="{Binding Name}"
+                                   TextColor="Orange"
+                                   FontAttributes="Italic"
+                                   FontSize="24"
+                                   ItemFontFamily="{StaticResource Pacifico}"
+                                   ItemColor="#0DB2DB"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
